@@ -9,7 +9,7 @@ function UpdateRestaurant() {
     const [priceRange, setPriceRange] = useState('')
 
     useEffect(()=> {
-        fetch(`http://localhost:3003/api/v1/restaurants/${id}`)
+        fetch(`/api/v1/restaurants/${id}`)
           .then(response => response.json())
           .then(data => {
               setName(data.data.restaurant.name)
@@ -25,7 +25,7 @@ function UpdateRestaurant() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch(`http://localhost:3003/api/v1/restaurants/${id}`, {
+        fetch(`/api/v1/restaurants/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

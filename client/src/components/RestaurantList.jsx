@@ -7,7 +7,7 @@ function RestaurantList(props) {
     const {restaurants, setRestaurants} = useContext(RestaurantContext)
     let navigate = useNavigate();
     useEffect(() => {
-        fetch('http://localhost:3003/api/v1/restaurants')
+        fetch('/api/v1/restaurants')
           .then(response => {
               return response.json()
             })
@@ -22,7 +22,7 @@ function RestaurantList(props) {
 
     const handleDelete = (e, id) => {
         e.stopPropagation();
-        fetch(`http://localhost:3003/api/v1/restaurants/${id}`, {
+        fetch(`/api/v1/restaurants/${id}`, {
             method: 'DELETE'
         }).then ( response => {
             setRestaurants(restaurants.filter(restaurant => {

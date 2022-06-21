@@ -10,7 +10,7 @@ function RestaurantDetailPage() {
     const {selectedRestaurant, setSelectedRestaurant} = useContext(RestaurantContext)
 
     useEffect(() => {
-        fetch(`http://localhost:3003/api/v1/restaurants/${id}`)
+        fetch(`/api/v1/restaurants/${id}`)
           .then(response => response.json())
           .then(data => setSelectedRestaurant(data.data))
           .catch(err => console.log(err))

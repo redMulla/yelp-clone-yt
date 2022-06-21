@@ -2,12 +2,17 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
+  "engines": {
+    "node": "16.13.2",
+    "npm": "8.5.3"
+  },
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
-  "author": "",
+  "author": "Red-Vassilly",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

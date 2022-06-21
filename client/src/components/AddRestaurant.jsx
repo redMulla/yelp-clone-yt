@@ -9,7 +9,7 @@ function AddRestaurant() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch('http://localhost:3003/api/v1/restaurants', {
+        fetch('/api/v1/restaurants', {
             method: 'POST',
             body: JSON.stringify({
                 name,
@@ -20,7 +20,7 @@ function AddRestaurant() {
                 'Content-Type': 'application/json'
             }
         }).then( response => {
-            response.json()
+            return response.json()
         }).then(responseData => {
             addRestaurants(responseData.data.restaurant)
         })

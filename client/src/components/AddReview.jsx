@@ -11,7 +11,7 @@ const AddReview = () => {
 
     const handleSubmitReview = (e) => {
         e.preventDefault()
-        fetch(`http://localhost:3003/review/api/v1/restaurants/${id}`, {
+        fetch(`/review/api/v1/restaurants/${id}`, {
             method: 'POST',
             body: JSON.stringify({
                 name,
@@ -22,7 +22,9 @@ const AddReview = () => {
                 'Content-Type': 'application/json'
             }
         })
-        .then( response => response.json())
+        .then( response =>{ 
+            return response.json()
+        })
         .then( data => {
             navigate("/");
             navigate(location.pathname)
