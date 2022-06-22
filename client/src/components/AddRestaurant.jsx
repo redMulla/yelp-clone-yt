@@ -22,7 +22,7 @@ function AddRestaurant() {
         }).then( response => {
             return response.json()
         }).then(responseData => {
-            addRestaurants(responseData.data.restaurant)
+            return addRestaurants(responseData.data.restaurant)
         })
         .catch(err => {
             console.log(err)
