@@ -19,10 +19,15 @@ function AddRestaurant() {
             headers: {
                 'Content-Type': 'application/json'
             }
-        }).then( response => {
+        })
+        .then( response => {
+            if (!response.ok) {
+                throw Error(response.statusText)
+            }
             return response.json()
-        }).then(responseData => {
-            return addRestaurants(responseData.data.restaurant)
+        })
+        .then(responseData => {
+            addRestaurants(responseData.data.restaurant)
         })
         .catch(err => {
             console.log(err)
